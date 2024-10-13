@@ -3,79 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Akshaya Srinithi SV - AI Developer and Engineer">
-    <title>Akshaya Srinithi SV Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Akshaya Srinithi Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Akshaya Srinithi SV</h1>
-        <p>AI Researcher | ML Engineer | Project Development Specialist</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Akshaya Srinithi SV</h1>
+            <p>AI Researcher | ML Engineer | Project Development Specialist</p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
     </header>
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" class="section">
         <h2>About Me</h2>
-        <p>
-            I am Akshaya Srinithi, passionate about AI and Machine Learning, with extensive experience in the MERN stack, AWS, and innovative project development. I thrive on solving complex problems and contributing to tech solutions that make an impact.
-        </p>
+        <p>I am an AI researcher and developer with a passion for innovation, solving real-world problems through technology. With expertise in AI/ML, IoT, and ECE, I focus on creating impactful projects.</p>
     </section>
 
-    <section id="experience">
+    <!-- Experience Section -->
+    <section id="experience" class="section">
         <h2>Experience</h2>
         <ul>
-            <li><strong>Software Developer Intern</strong>, Selsons Software Solutions, Chennai</li>
-            <li><strong>Electronic Data Processing Intern</strong>, Chennai Port Trust</li>
-            <li><strong>Part-Time Tutor</strong>, Filo Virtual</li>
+            <li><strong>Selsons Software Solutions, Chennai</strong> - Software Developer Intern (2024)</li>
+            <li><strong>Chennai Port Trust</strong> - Electronic Data Processing Intern (2023)</li>
         </ul>
     </section>
 
-    <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
         <h2>Projects</h2>
-        <ul>
-            <li><strong>Recrewva</strong>: AI-powered recruitment platform using MERN Stack and AWS</li>
-            <li><strong>Resume Parsing AI</strong>: NLP-based AI model for resume analysis and processing</li>
-            <li><strong>SpecForge AI</strong>: AI-driven intelligent board design system</li>
-            <li><strong>Water Wise</strong>: IoT and Unity-based AC water recycling system (IoT hackathon finalist)</li>
-        </ul>
+        <div class="project-grid">
+            <div class="project">
+                <img src="recrewva.png" alt="Recrewva Project">
+                <div class="project-info">
+                    <h3>Recrewva</h3>
+                    <p>AI-powered recruitment platform.</p>
+                    <a href="https://github.com/akshayasrinithi/recrewva" class="btn">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="e-car-vacuum.png" alt="E-car Vacuum Project">
+                <div class="project-info">
+                    <h3>E-Car Vacuum</h3>
+                    <p>Low-cost automatic vacuum with object sensor.</p>
+                </div>
+            </div>
+            <!-- More projects can be added here -->
+        </div>
     </section>
 
-    <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <h2>Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Python, Java, C, JavaScript</li>
-            <li><strong>Frameworks:</strong> MERN Stack, AWS (Lambda, EC2, S3), TensorFlow, Scikit-learn</li>
-            <li><strong>Tools:</strong> AutoCAD, Unity 3D, Figma, VS Code</li>
-        </ul>
+        <canvas id="skillsChart"></canvas>
     </section>
 
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Generative AI – SAWIT.AI Learnathon (GUVI, HCLTech)</li>
-            <li>Claude AI Masterclass – Skill Nation</li>
-            <li>Very Large Scale Integration – Grantley Edutech</li>
-            <li>Serverless Development in AWS – AWS</li>
-        </ul>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/YOUR_EMAIL" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:akshayasri2908@gmail.com">akshayasri2908@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/akshaya-srinithi-sv-933376273/" target="_blank">LinkedIn Profile</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Akshaya Srinithi SV</p>
-    </footer>
+    <!-- Include app.js for the skills chart -->
+    <script src="app.js"></script>
 </body>
 </html>
