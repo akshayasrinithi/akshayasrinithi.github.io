@@ -3,93 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshaya Srinithi Portfolio</title>
+    <title>Akshaya Srinithi SV | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <header class="navbar">
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Akshaya Srinithi SV</h1>
-            <p>AI Researcher | ML Engineer | Project Development Specialist</p>
-            <a href="#projects" class="btn">View Projects</a>
-        </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
+    <section class="hero">
+        <h1>Akshaya Srinithi SV</h1>
+        <p>AI Researcher | ML Engineer | Project Development Specialist</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <section class="section" id="about">
         <h2>About Me</h2>
-        <p>I am an AI researcher and developer with a passion for innovation, solving real-world problems through technology. With expertise in AI/ML, IoT, and ECE, I focus on creating impactful projects.</p>
+        <p>I am Akshaya Srinithi, passionate about AI and Machine Learning, with extensive experience in the MERN stack, AWS, and innovative project development. I thrive on solving complex problems and contributing to tech solutions that make an impact.</p>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section class="section" id="experience">
         <h2>Experience</h2>
-        <ul>
-            <li><strong>Selsons Software Solutions, Chennai</strong> - Software Developer Intern (2024)</li>
-            <li><strong>Chennai Port Trust</strong> - Electronic Data Processing Intern (2023)</li>
-        </ul>
+        <div>
+            <h3>Software Developer Intern</h3>
+            <p>Selsons Software Solutions, Chennai</p>
+            <h3>Electronic Data Processing Intern</h3>
+            <p>Chennai Port Trust</p>
+            <h3>Part-Time Tutor</h3>
+            <p>Filo Virtual</p>
+        </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
+    <section class="section" id="projects">
         <h2>Projects</h2>
         <div class="project-grid">
             <div class="project">
-                <img src="recrewva.png" alt="Recrewva Project">
+                <img src="https://source.unsplash.com/featured/?coding" alt="Recrewva Project">
                 <div class="project-info">
                     <h3>Recrewva</h3>
-                    <p>AI-powered recruitment platform.</p>
-                    <a href="https://github.com/akshayasrinithi/recrewva" class="btn">View on GitHub</a>
+                    <p>AI-powered recruitment platform using MERN Stack and AWS.</p>
                 </div>
             </div>
             <div class="project">
-                <img src="e-car-vacuum.png" alt="E-car Vacuum Project">
+                <img src="https://source.unsplash.com/featured/?ai" alt="Resume Parsing Project">
                 <div class="project-info">
-                    <h3>E-Car Vacuum</h3>
-                    <p>Low-cost automatic vacuum with object sensor.</p>
+                    <h3>Resume Parsing AI</h3>
+                    <p>NLP-based AI model for extracting key information from resumes.</p>
                 </div>
             </div>
-            <!-- More projects can be added here -->
+            <div class="project">
+                <img src="https://source.unsplash.com/featured/?iot" alt="SpecForge AI">
+                <div class="project-info">
+                    <h3>SpecForge AI</h3>
+                    <p>AI-driven intelligent board design system using AWS and Python.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section class="section" id="skills">
         <h2>Skills</h2>
         <canvas id="skillsChart"></canvas>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/YOUR_EMAIL" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+    <section class="section" id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Generative AI - SAWIT.AI Learnathon (GUVI, HCLTech)</li>
+            <li>Claude AI Masterclass - Skill Nation</li>
+            <li>Very Large Scale Integration - Grantley Edutech</li>
+            <li>Serverless Development in AWS - AWS</li>
+        </ul>
     </section>
 
-    <!-- Include app.js for the skills chart -->
-    <script src="app.js"></script>
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:akshayasri2908@gmail.com">akshayasri2908@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/akshayasrinithi">LinkedIn Profile</a></p>
+    </section>
+
+    <footer>
+        <p>© 2024 Akshaya Srinithi SV</p>
+    </footer>
+
+    <script>
+        // Skills Radar Chart
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['AI', 'Python', 'IoT', 'AWS', 'MERN Stack', 'Machine Learning'],
+                datasets: [{
+                    label: 'Skill Proficiency',
+                    data: [90, 85, 80, 75, 85, 80],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
