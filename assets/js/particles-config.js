@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 100,  // Adjust based on density preference
+                "value": 80,  // Increase for more particles if needed
                 "density": {
                     "enable": true,
                     "value_area": 800
                 }
             },
             "color": {
-                "value": ["#6A00F4", "#0ABFBC", "#1A7DA8", "#50E4B5"]  // Gradient-like effect
+                "value": ["#6A00F4", "#0ABFBC", "#50E4B5"]  // Gradient-like effect
             },
             "shape": {
                 "type": "circle",
@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "line_linked": {
                 "enable": true,
-                "distance": 120,
+                "distance": 100,  // Decrease to make particles closer
                 "color": "#ffffff",
-                "opacity": 0.5,
+                "opacity": 0.6,
                 "width": 1
             },
             "move": {
                 "enable": true,
-                "speed": 2,
+                "speed": 2,  // Increase for faster movement
                 "direction": "none",
                 "random": true,
                 "straight": false,
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "events": {
                 "onhover": {
                     "enable": true,
-                    "mode": "grab"
+                    "mode": "repulse"  // Repulse for dynamic interaction
                 },
                 "onclick": {
                     "enable": true,
@@ -62,11 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
-                    }
+                "repulse": {
+                    "distance": 100,
+                    "duration": 0.4
                 },
                 "push": {
                     "particles_nb": 4
