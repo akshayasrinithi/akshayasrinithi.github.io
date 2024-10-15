@@ -6,14 +6,14 @@
     <meta name="description" content="Akshaya Srinithi's portfolio showcasing AI, software development, and electronics engineering skills">
     
     <!-- Corrected CSS Path -->
-    <link rel="stylesheet" href="assests/css/home.css">
+    <link rel="stylesheet" href="assets/css/home.css">
     
     <!-- Include Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <!-- Correct JS Paths -->
-    <script src="assests/js/particles-background.min.js"></script> <!-- Corrected file name and path -->
-    <script src="assests/js/particles-config.js"></script> <!-- Corrected file name and path -->
+    <script src="assets/js/particles-background.min.js"></script> <!-- Corrected file name and path -->
+    <script src="assets/js/particles-config.js"></script> <!-- Corrected file name and path -->
     
     <title>Akshaya Srinithi | AI Researcher | Developer</title>
 </head>
@@ -33,9 +33,16 @@
         </div>
     </section>
 
-    <!-- Optional Preloader Section (add/remove as needed) -->
+    <!-- Remove or hide preloader if not needed -->
     <div id="preloader">
         <div id="loader"></div>
     </div>
+    
+    <!-- Preloader removal after loading -->
+    <script>
+      window.onload = function () {
+          document.getElementById("preloader").style.display = "none";
+      };
+    </script>
 </body>
 </html>

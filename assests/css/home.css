@@ -52,8 +52,9 @@ p {
     background-color: #00ff88; /* AI theme color */
 }
 
+/* Preloader styles */
 #preloader {
-    display: none; /* Set to block if you want to use preloader */
+    display: none; /* Hide by default */
     position: absolute;
     top: 0;
     left: 0;
