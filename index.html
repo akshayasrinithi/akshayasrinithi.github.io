@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akshaya Srinithi's portfolio showcasing AI, software development, and electronics engineering skills">
     
-    <!-- Correct CSS Path -->
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="assets/css/home.css">
     
     <!-- Include Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
+    <!-- Include particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Custom particles configuration -->
+    <script src="assets/js/particles-config.js"></script>
+
     <title>Akshaya Srinithi | AI Researcher | Developer</title>
 </head>
 <body>
     <!-- Particles Background -->
     <div id="particles-js"></div>
-    
-    <!-- Home Section -->
+
+    <!-- Main content -->
     <section id="home">
-        <div class="text">
+        <div class="content">
             <h1>Hi 👋 I'm Akshaya Srinithi</h1>
             <p>AI Researcher | Software Developer | Electronics Engineer</p>
             <div class="social-icons">
@@ -29,16 +35,12 @@
         </div>
     </section>
 
-    <!-- Preloader Section -->
+    <!-- Preloader -->
     <div id="preloader">
         <div id="loader"></div>
     </div>
     
-    <!-- Move JavaScript here -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="assets/js/particles-config.js"></script>
-
-    <!-- Preloader removal after loading -->
+    <!-- Preloader removal script -->
     <script>
       window.onload = function () {
           document.getElementById("preloader").style.display = "none";
