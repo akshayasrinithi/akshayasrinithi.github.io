@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 80,  // Increase for more particles if needed
+                "value": 100,  // Adjust based on density preference
                 "density": {
                     "enable": true,
                     "value_area": 800
                 }
             },
             "color": {
-                "value": ["#6A00F4", "#0ABFBC", "#50E4B5"]  // Gradient-like effect
+                "value": ["#6A00F4", "#0ABFBC", "#1A7DA8", "#50E4B5"]  // Gradient-like effect
             },
             "shape": {
                 "type": "circle",
@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "line_linked": {
                 "enable": true,
-                "distance": 100,  // Decrease to make particles closer
+                "distance": 120,
                 "color": "#ffffff",
-                "opacity": 0.6,
+                "opacity": 0.5,
                 "width": 1
             },
             "move": {
                 "enable": true,
-                "speed": 2,  // Increase for faster movement
+                "speed": 2,
                 "direction": "none",
                 "random": true,
                 "straight": false,
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "events": {
                 "onhover": {
                     "enable": true,
-                    "mode": "repulse"  // Repulse for dynamic interaction
+                    "mode": "grab"
                 },
                 "onclick": {
                     "enable": true,
@@ -62,9 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             "modes": {
-                "repulse": {
-                    "distance": 100,
-                    "duration": 0.4
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
                 },
                 "push": {
                     "particles_nb": 4
