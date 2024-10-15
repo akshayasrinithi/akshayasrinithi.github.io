@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akshaya Srinithi's portfolio showcasing AI, software development, and electronics engineering skills">
     
-    <!-- Corrected CSS Path -->
+    <!-- Correct CSS Path -->
     <link rel="stylesheet" href="assets/css/home.css">
     
     <!-- Include Font Awesome for social media icons -->
@@ -14,15 +14,36 @@
     <!-- Load particles.js first -->
     <script src="assets/js/particles-background.min.js"></script>
     
-    <!-- Check if particlesJS is loaded, then load config -->
+    <!-- Ensure particles.js is loaded before using particlesJS -->
     <script>
         window.onload = function() {
             if (typeof particlesJS !== "undefined") {
-                particlesJS.load('particles-js', 'assets/js/particles-config.js', function() {
-                    console.log('particles.js configuration loaded successfully');
+                particlesJS("particles-js", {
+                    particles: {
+                        number: { value: 100, density: { enable: true, value_area: 800 } },
+                        color: { value: ["#36C5F0", "#2EB67D", "#ECB22E", "#E01E5B"] },
+                        shape: { type: "circle", stroke: { width: 0, color: "#fff" } },
+                        opacity: { value: 1 },
+                        size: { value: 6, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#808080",
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: { enable: true, speed: 4, out_mode: "out" }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "repulse" }
+                        }
+                    },
+                    retina_detect: true
                 });
             } else {
-                console.error('particlesJS is not defined. Check if particles.js is loaded correctly.');
+                console.error("particlesJS is not defined. Ensure particles.js is loaded correctly.");
             }
         };
     </script>
