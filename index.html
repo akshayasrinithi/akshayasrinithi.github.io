@@ -11,13 +11,19 @@
     <!-- Include Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
-    <!-- Correct JS Paths -->
-    <script src="assets/js/particles-background.min.js"></script> <!-- Load particles.js first -->
+    <!-- Load particles.js first -->
+    <script src="assets/js/particles-background.min.js"></script>
+    
+    <!-- Check if particlesJS is loaded, then load config -->
     <script>
         window.onload = function() {
-            particlesJS.load('particles-js', 'assets/js/particles-config.js', function() {
-                console.log('particles.js loaded - callback');
-            });
+            if (typeof particlesJS !== "undefined") {
+                particlesJS.load('particles-js', 'assets/js/particles-config.js', function() {
+                    console.log('particles.js configuration loaded successfully');
+                });
+            } else {
+                console.error('particlesJS is not defined. Check if particles.js is loaded correctly.');
+            }
         };
     </script>
     
