@@ -1,3 +1,4 @@
+/* BASE */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -36,12 +37,10 @@ body {
     width: 160px;
     border-radius: 12px;
     margin-bottom: 20px;
-    filter: grayscale(20%);
 }
 
 .left h1 {
     font-size: 42px;
-    font-weight: 600;
     margin: 0;
     text-shadow: 0 0 10px rgba(59,130,246,0.4);
 }
@@ -49,101 +48,69 @@ body {
 .tagline {
     margin-top: 12px;
     color: #9ca3af;
-    line-height: 1.6;
 }
 
 /* RIGHT SECTION */
 .right {
     width: 60%;
-    padding-left: 40px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    align-content: center;
-}
-
-/* CARDS */
-.card {
-    padding: 30px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* CARD TEXT */
-.card h3 {
-    margin: 0;
-    font-weight: 500;
-    color: #e5e7eb;
-}
-
-/* HOVER EFFECT */
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 0 25px rgba(59,130,246,0.25);
-    border: 1px solid rgba(59,130,246,0.4);
-}
-/* PANEL OVERLAY */
-.panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(10, 15, 30, 0.97);
-    backdrop-filter: blur(15px);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-
-    z-index: 9999; /* 🔥 VERY IMPORTANT */
 }
 
-/* ACTIVE PANEL */
-.panel.show {
-    opacity: 1;
-    visibility: visible;
+/* FLASH CARD CONTAINER */
+.card-container {
+    position: relative;
+    width: 400px;
+    height: 250px;
 }
 
-/* PANEL CONTENT */
-.panel-content {
-    position: relative; /* required for button positioning */
+/* FLASH CARDS */
+.flash-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
-    width: 60%;
-    max-width: 800px;
-    padding: 40px;
-    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+
+    font-size: 22px;
+    font-weight: 500;
+
     border: 1px solid rgba(255,255,255,0.1);
 
-    box-shadow: 0 0 30px rgba(59,130,246,0.2);
-}
-
-/* CLOSE BUTTON */
-#closeBtn {
-    float: right;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
+    transition: all 0.4s ease;
     cursor: pointer;
 }
 
-/* TEXT */
-#panel-title {
-    margin-top: 0;
+/* ACTIVE */
+.flash-card.active {
+    transform: scale(1) translateX(0);
+    z-index: 3;
+    box-shadow: 0 0 30px rgba(59,130,246,0.3);
 }
 
-#panel-body {
-    color: #cbd5e1;
+/* LEFT */
+.flash-card.left {
+    transform: scale(0.9) translateX(-220px);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+/* RIGHT */
+.flash-card.right {
+    transform: scale(0.9) translateX(220px);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+/* HIDDEN */
+.flash-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
 }
