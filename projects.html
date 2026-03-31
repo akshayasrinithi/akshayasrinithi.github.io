@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Akshaya Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas class="particle-canvas" id="project-particle-canvas" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main class="project-page">
+    <section class="project-hero">
+        <p class="project-kicker">Projects Showcase</p>
+        <h1>Modern engineering work presented like products.</h1>
+        <p>
+            A curated look at AI, ML, and circuit-focused builds with cleaner storytelling,
+            richer previews, and quick access to source links and deeper notes.
+        </p>
+        <div class="project-toolbar">
+            <a class="action-button primary" href="index.html">Back to Swipe Deck</a>
+            <span class="project-filter-label">AI, ML, embedded systems, and interface-driven experiments.</span>
+        </div>
+    </section>
+
+    <section class="projects-shell">
+        <div class="project-grid">
+            <article class="project-card" data-project="Neural Fault Monitor|An ML-assisted circuit diagnostics dashboard that spots anomalies early and turns raw signal patterns into clear maintenance actions.|This concept combines sensor capture, feature extraction, lightweight classification, and a visual diagnostics layer for electronics teams working with repeated system checks.">
+                <div class="project-preview">
+                    <div class="preview-accent"></div>
+                </div>
+                <div>
+                    <h2 class="project-title">Neural Fault Monitor</h2>
+                    <p class="project-description">
+                        An ML-assisted circuit diagnostics dashboard for spotting faults before they become failures.
+                    </p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag-pill">AI</span>
+                    <span class="tag-pill">Signal Analysis</span>
+                    <span class="tag-pill">Circuit Design</span>
+                </div>
+                <div class="project-actions">
+                    <button class="action-button primary" type="button" data-open-project>View</button>
+                    <a class="action-button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card" data-project="Embedded Vision Node|A compact edge-computing prototype for real-time object detection in hardware-aware environments.|The idea centers on inference at the edge, low-power operation, and a compact UI layer for reviewing predictions, confidence levels, and deployment status.">
+                <div class="project-preview">
+                    <div class="preview-accent"></div>
+                </div>
+                <div>
+                    <h2 class="project-title">Embedded Vision Node</h2>
+                    <p class="project-description">
+                        Edge inference for real-time visual detection with low-power hardware considerations.
+                    </p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag-pill">ML</span>
+                    <span class="tag-pill">Embedded</span>
+                    <span class="tag-pill">Computer Vision</span>
+                </div>
+                <div class="project-actions">
+                    <button class="action-button primary" type="button" data-open-project>View</button>
+                    <a class="action-button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card" data-project="Adaptive Power Planner|A concept for optimizing energy usage across intelligent circuit subsystems with rule-based control and predictive analysis.|This system balances load behavior, predicts spikes, and presents usage data through a calm, product-style monitoring interface for faster engineering decisions.">
+                <div class="project-preview">
+                    <div class="preview-accent"></div>
+                </div>
+                <div>
+                    <h2 class="project-title">Adaptive Power Planner</h2>
+                    <p class="project-description">
+                        Predictive power management for circuit subsystems with a cleaner monitoring layer.
+                    </p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag-pill">Optimization</span>
+                    <span class="tag-pill">Hardware</span>
+                    <span class="tag-pill">Analytics</span>
+                </div>
+                <div class="project-actions">
+                    <button class="action-button primary" type="button" data-open-project>View</button>
+                    <a class="action-button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card" data-project="Conversational Lab Assistant|A lightweight assistant concept that helps students and teams query experiments, notes, and electronics workflows conversationally.|It connects structured lab knowledge with a guided conversational layer so technical information is easier to retrieve and act on.">
+                <div class="project-preview">
+                    <div class="preview-accent"></div>
+                </div>
+                <div>
+                    <h2 class="project-title">Conversational Lab Assistant</h2>
+                    <p class="project-description">
+                        A guided assistant for querying lab notes, experiment states, and engineering workflows.
+                    </p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag-pill">LLM UX</span>
+                    <span class="tag-pill">Automation</span>
+                    <span class="tag-pill">Research</span>
+                </div>
+                <div class="project-actions">
+                    <button class="action-button primary" type="button" data-open-project>View</button>
+                    <a class="action-button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<div class="project-modal" id="project-modal" aria-hidden="true">
+    <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="project-modal-header">
+            <div>
+                <p class="project-kicker">Project Detail</p>
+                <h2 class="project-modal-title" id="project-modal-title">Project</h2>
+            </div>
+            <button class="modal-close" type="button" aria-label="Close modal">X</button>
+        </div>
+        <p class="project-modal-copy" id="project-modal-copy"></p>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById("project-modal");
+const modalTitle = document.getElementById("project-modal-title");
+const modalCopy = document.getElementById("project-modal-copy");
+const closeButton = document.querySelector(".modal-close");
+
+function closeModal() {
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+document.querySelectorAll("[data-open-project]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".project-card");
+    const [title, shortCopy, detail] = card.dataset.project.split("|");
+    modalTitle.textContent = title;
+    modalCopy.textContent = `${shortCopy} ${detail}`;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+  });
+});
+
+closeButton.addEventListener("click", closeModal);
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+
+const projectCanvas = document.getElementById("project-particle-canvas");
+
+if (projectCanvas) {
+  const context = projectCanvas.getContext("2d");
+  const dots = Array.from({ length: 46 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    radius: 1 + Math.random() * 2,
+    alpha: 0.14 + Math.random() * 0.2,
+    dx: -0.24 + Math.random() * 0.48,
+    dy: -0.18 + Math.random() * 0.36
+  }));
+
+  function resizeProjectCanvas() {
+    projectCanvas.width = window.innerWidth;
+    projectCanvas.height = window.innerHeight;
+  }
+
+  function drawProjectParticles() {
+    context.clearRect(0, 0, projectCanvas.width, projectCanvas.height);
+
+    dots.forEach((dot) => {
+      dot.x += dot.dx;
+      dot.y += dot.dy;
+
+      if (dot.x < -20) dot.x = projectCanvas.width + 20;
+      if (dot.x > projectCanvas.width + 20) dot.x = -20;
+      if (dot.y < -20) dot.y = projectCanvas.height + 20;
+      if (dot.y > projectCanvas.height + 20) dot.y = -20;
+
+      const glow = context.createRadialGradient(dot.x, dot.y, 0, dot.x, dot.y, dot.radius * 8);
+      glow.addColorStop(0, `rgba(103, 232, 249, ${dot.alpha})`);
+      glow.addColorStop(1, "rgba(103, 232, 249, 0)");
+
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(dot.x, dot.y, dot.radius * 8, 0, Math.PI * 2);
+      context.fill();
+
+      context.fillStyle = `rgba(224, 242, 254, ${dot.alpha + 0.06})`;
+      context.beginPath();
+      context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    requestAnimationFrame(drawProjectParticles);
+  }
+
+  resizeProjectCanvas();
+  drawProjectParticles();
+  window.addEventListener("resize", resizeProjectCanvas);
+}
+</script>
+
+</body>
+</html>

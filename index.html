@@ -2,69 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshaya Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- Particles -->
-<div id="particles-js"></div>
+<canvas class="particle-canvas" id="particle-canvas" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
 
-<div class="container">
+<main class="swipe-page">
+    <section class="intro-shell" aria-label="Profile introduction">
+        <img src="aks.jpeg" class="profile-image" alt="Portrait of Akshaya Srinithi">
+        <div class="intro-copy">
+            <h1>Akshaya Srinithi S.V.</h1>
+        </div>
+    </section>
 
-    <!-- LEFT SIDE -->
-    <div class="left">
+    <section class="deck-shell" aria-label="Swipe portfolio cards">
+        <div class="swipe-strip" aria-hidden="true">
+            <div class="swipe-strip-track">
+                <span>Explore Through My World Of Tech, Projects And Academia</span>
+                <span>Explore Through My World Of Tech, Projects And Academia</span>
+                <span>Explore Through My World Of Tech, Projects And Academia</span>
+            </div>
+        </div>
 
-        <img src="aks.jpeg" class="profile">
+        <div class="deck-frame">
+            <div class="card-stack" id="card-stack"></div>
+        </div>
 
-        <h1>Akshaya Srinithi</h1>
+        <div class="deck-timeline" id="deck-timeline" aria-label="Portfolio card timeline"></div>
+    </section>
+</main>
 
-        <p class="tagline">
-            AI + Electronics Engineer <br>
-            Intelligent Circuit Systems
-        </p>
+<template id="portfolio-card-template">
+    <article class="swipe-card">
+        <div class="card-chrome">
+            <span class="card-chip"></span>
+            <span class="card-count"></span>
+        </div>
+        <div class="card-visual">
+            <div class="visual-glow"></div>
+            <div class="visual-content">
+                <span class="visual-label"></span>
+                <h2 class="card-title"></h2>
+                <p class="card-summary"></p>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="card-detail"></p>
+            <div class="card-tags"></div>
+            <div class="card-actions"></div>
+        </div>
+    </article>
+</template>
 
-    </div>
-    <!-- FULLSCREEN PANEL -->
-<div id="panel" class="panel">
-
-    <div class="panel-content">
-
-        <button id="closeBtn">✕</button>
-
-        <h2 id="panel-title">Title</h2>
-
-        <p id="panel-body">
-            Content will appear here...
-        </p>
-
-    </div>
-
-</div>
-
-    <!-- RIGHT SIDE -->
-<div class="card-container">
-
-    <div class="flash-card">About</div>
-    <div class="flash-card">Projects</div>
-    <div class="flash-card">Education</div>
-    <div class="flash-card">Timeline</div>
-    <div class="flash-card">Goals</div>
-    <div class="flash-card">Connect</div>
-    <div class="flash-card">Message</div>
-
-</div>
-
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script src="script.js"></script>
+<script src="swipe.js"></script>
 
 </body>
 </html>
