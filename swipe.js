@@ -3,57 +3,57 @@ const portfolioSections = [
     chip: "About",
     label: "Profile",
     title: "About",
-    summary: "A short introduction to my background, interests, and engineering approach.",
-    detail: "A minimal portfolio deck built for quick exploration.",
+    summary: "Electronics & AI Engineer",
+    detail: "AI x Electronics • Chip Design • Intelligent Systems",
     action: { label: "Enter About", href: "about.html" }
+  },
+  {
+    chip: "Education",
+    label: "Academic Foundation",
+    title: "Education",
+    summary: "Building strong fundamentals in electronics, VLSI, and intelligent system design.",
+    detail: "Focused on core engineering principles and practical application.",
+    action: { label: "See Academic Details", href: "education.html" }
   },
   {
     chip: "Projects",
     label: "Showcase",
     title: "Projects",
-    summary: "A collection of product-minded AI, software, and electronics work.",
-    detail: "This card leads into a dedicated project showcase page.",
+    summary: "AI-driven circuit design, simulation systems, and intelligent hardware projects.",
+    detail: "Focused on solving engineering problems through AI and system design.",
     action: { label: "Explore Projects", href: "projects.html" }
   },
   {
-    chip: "Education",
-    label: "Learning",
-    title: "Education",
-    summary: "A quick snapshot of academic foundations, technical study, and growth.",
-    detail: "Placeholder content for now, ready to expand later.",
-    action: { label: "View Education", href: "education.html" }
-  },
-  {
-    chip: "Timeline",
-    label: "Journey",
-    title: "Timeline",
-    summary: "A simple timeline card for milestones, progress, and key moments.",
-    detail: "This is set up as a clean placeholder destination.",
-    action: { label: "View Timeline", href: "timeline.html" }
+    chip: "Skills",
+    label: "Toolkit",
+    title: "Skills",
+    summary: "Tools, technologies, and systems I use to build and design.",
+    detail: "Built through hands-on projects and applied engineering.",
+    action: { label: "View Skills", href: "skills.html" }
   },
   {
     chip: "Goals",
     label: "Direction",
     title: "Goals",
-    summary: "A future-facing card for ambitions, focus areas, and next steps.",
-    detail: "Built to stay concise now and scale later.",
+    summary: "Advancing toward AI-driven chip design and intelligent hardware systems.",
+    detail: "Working toward impactful contributions in intelligent hardware and AI.",
     action: { label: "Explore Goals", href: "goals.html" }
   },
   {
     chip: "Connect",
     label: "Reach Out",
-    title: "Connect",
-    summary: "A placeholder card for links, contact methods, and collaboration details.",
-    detail: "We can customize this section later with real channels.",
+    title: "Lets Connect",
+    summary: "Open to collaboration, opportunities, and building impactful systems together.",
+    detail: "Available for internships, collaborations, and technical discussions.",
     action: { label: "Open Connect", href: "connect.html" }
   },
   {
     chip: "Message",
     label: "Notes",
     title: "Message",
-    summary: "A lightweight placeholder for messages, guest notes, or a future contact form.",
-    detail: "This keeps the loop complete while staying easy to expand.",
-    action: { label: "Open Message", href: "message.html" }
+    summary: "Drop a message, idea, or collaboration note.",
+    detail: "Open to ideas, feedback, and conversations.",
+    action: { label: "Send Message", href: "message.html" }
   }
 ];
 
@@ -107,13 +107,15 @@ function startParticles() {
   }
 
   const context = particleCanvas.getContext("2d");
+  resizeCanvas();
+
   const particles = Array.from({ length: 56 }, () => ({
     x: Math.random() * particleCanvas.width,
     y: Math.random() * particleCanvas.height,
     radius: 1 + Math.random() * 2.4,
     alpha: 0.16 + Math.random() * 0.24,
-    dx: -0.25 + Math.random() * 0.5,
-    dy: -0.22 + Math.random() * 0.44
+    dx: -0.55 + Math.random() * 1.1,
+    dy: -0.48 + Math.random() * 0.96
   }));
 
   function draw() {
@@ -137,15 +139,15 @@ function startParticles() {
         particle.radius * 8
       );
 
-      gradient.addColorStop(0, `rgba(103, 232, 249, ${particle.alpha})`);
-      gradient.addColorStop(1, "rgba(103, 232, 249, 0)");
+      gradient.addColorStop(0, `rgba(200, 189, 223, ${particle.alpha})`);
+      gradient.addColorStop(1, "rgba(200, 189, 223, 0)");
 
       context.fillStyle = gradient;
       context.beginPath();
       context.arc(particle.x, particle.y, particle.radius * 8, 0, Math.PI * 2);
       context.fill();
 
-      context.fillStyle = `rgba(207, 250, 254, ${particle.alpha + 0.08})`;
+      context.fillStyle = `rgba(231, 225, 241, ${particle.alpha + 0.08})`;
       context.beginPath();
       context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
       context.fill();
@@ -153,8 +155,6 @@ function startParticles() {
 
     requestAnimationFrame(draw);
   }
-
-  resizeCanvas();
   draw();
   window.addEventListener("resize", resizeCanvas);
 }
@@ -175,8 +175,9 @@ function renderTimeline() {
   deckTimeline.innerHTML = "";
 
   portfolioSections.forEach((section, index) => {
-    const item = document.createElement("div");
+    const item = document.createElement("a");
     item.className = `timeline-step${index === activeIndex ? " is-active" : ""}`;
+    item.href = section.action.href;
 
     const dot = document.createElement("span");
     dot.className = "timeline-dot";
@@ -245,14 +246,20 @@ function renderDeck() {
   renderTimeline();
 }
 
-function rotateDeck() {
-  const shifted = deck.shift();
-
-  if (shifted) {
-    deck.push(shifted);
+function rotateDeck(direction = 1) {
+  if (direction === -1) {
+    const shifted = deck.pop();
+    if (shifted) {
+      deck.unshift(shifted);
+    }
+    activeIndex = (activeIndex - 1 + portfolioSections.length) % portfolioSections.length;
+  } else {
+    const shifted = deck.shift();
+    if (shifted) {
+      deck.push(shifted);
+    }
+    activeIndex = (activeIndex + 1) % portfolioSections.length;
   }
-
-  activeIndex = (activeIndex + 1) % portfolioSections.length;
 
   renderDeck();
 
@@ -279,15 +286,16 @@ function resetCardPosition(card) {
 }
 
 function commitSwipe(card, deltaX) {
-  const direction = deltaX > 0 ? 1 : -1;
-  const flyOutX = window.innerWidth * direction;
-  const rotation = direction * 16;
+  const visualDirection = deltaX > 0 ? 1 : -1;
+  const orderDirection = deltaX > 0 ? 1 : -1;
+  const flyOutX = window.innerWidth * visualDirection;
+  const rotation = visualDirection * 16;
 
   card.style.transition = "transform 320ms cubic-bezier(0.22, 1, 0.36, 1)";
-  card.style.transform = `translate3d(${flyOutX}px, 24px, 0) rotate(${rotation}deg) rotateY(${direction * 10}deg)`;
+  card.style.transform = `translate3d(${flyOutX}px, 24px, 0) rotate(${rotation}deg) rotateY(${visualDirection * 10}deg)`;
 
   window.setTimeout(() => {
-    rotateDeck();
+    rotateDeck(orderDirection);
   }, 320);
 }
 

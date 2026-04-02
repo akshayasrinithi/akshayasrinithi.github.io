@@ -168,19 +168,21 @@ const projectCanvas = document.getElementById("project-particle-canvas");
 
 if (projectCanvas) {
   const context = projectCanvas.getContext("2d");
-  const dots = Array.from({ length: 46 }, () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    radius: 1 + Math.random() * 2,
-    alpha: 0.14 + Math.random() * 0.2,
-    dx: -0.24 + Math.random() * 0.48,
-    dy: -0.18 + Math.random() * 0.36
-  }));
-
   function resizeProjectCanvas() {
     projectCanvas.width = window.innerWidth;
     projectCanvas.height = window.innerHeight;
   }
+
+  resizeProjectCanvas();
+
+  const dots = Array.from({ length: 46 }, () => ({
+    x: Math.random() * projectCanvas.width,
+    y: Math.random() * projectCanvas.height,
+    radius: 1 + Math.random() * 2,
+    alpha: 0.14 + Math.random() * 0.2,
+    dx: -0.5 + Math.random() * 1,
+    dy: -0.4 + Math.random() * 0.8
+  }));
 
   function drawProjectParticles() {
     context.clearRect(0, 0, projectCanvas.width, projectCanvas.height);
@@ -195,15 +197,15 @@ if (projectCanvas) {
       if (dot.y > projectCanvas.height + 20) dot.y = -20;
 
       const glow = context.createRadialGradient(dot.x, dot.y, 0, dot.x, dot.y, dot.radius * 8);
-      glow.addColorStop(0, `rgba(103, 232, 249, ${dot.alpha})`);
-      glow.addColorStop(1, "rgba(103, 232, 249, 0)");
+      glow.addColorStop(0, `rgba(200, 189, 223, ${dot.alpha})`);
+      glow.addColorStop(1, "rgba(200, 189, 223, 0)");
 
       context.fillStyle = glow;
       context.beginPath();
       context.arc(dot.x, dot.y, dot.radius * 8, 0, Math.PI * 2);
       context.fill();
 
-      context.fillStyle = `rgba(224, 242, 254, ${dot.alpha + 0.06})`;
+      context.fillStyle = `rgba(231, 225, 241, ${dot.alpha + 0.06})`;
       context.beginPath();
       context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
       context.fill();
@@ -211,8 +213,6 @@ if (projectCanvas) {
 
     requestAnimationFrame(drawProjectParticles);
   }
-
-  resizeProjectCanvas();
   drawProjectParticles();
   window.addEventListener("resize", resizeProjectCanvas);
 }
