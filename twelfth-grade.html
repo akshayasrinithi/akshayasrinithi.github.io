@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12th Grade | Akshaya Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas class="particle-canvas" id="twelfth-particle-canvas" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main class="project-page grade-page">
+    <section class="project-hero grade-hero">
+        <p class="project-kicker">Academic Record</p>
+        <h1>12th Grade</h1>
+        <p>Where academic clarity, focused preparation, and future direction became stronger.</p>
+        <div class="project-toolbar">
+            <a class="action-button primary" href="education.html">Back to Education</a>
+        </div>
+    </section>
+
+    <section class="grade-grid">
+        <article class="grade-panel grade-snapshot">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Academic Snapshot</p>
+                <h2>Higher Secondary Record</h2>
+            </div>
+            <div class="grade-stat-grid">
+                <div class="grade-stat">
+                    <span class="grade-stat-label">Board</span>
+                    <strong>To Be Added</strong>
+                </div>
+                <div class="grade-stat">
+                    <span class="grade-stat-label">School Name</span>
+                    <strong>To Be Added</strong>
+                </div>
+                <div class="grade-stat">
+                    <span class="grade-stat-label">Year</span>
+                    <strong>To Be Added</strong>
+                </div>
+                <div class="grade-stat">
+                    <span class="grade-stat-label">Percentage / CGPA</span>
+                    <strong>To Be Added</strong>
+                </div>
+                <div class="grade-stat">
+                    <span class="grade-stat-label">Stream</span>
+                    <strong>Science / Math Group</strong>
+                </div>
+                <div class="grade-stat">
+                    <span class="grade-stat-label">Key Subjects</span>
+                    <strong>Maths, Physics, Chemistry</strong>
+                </div>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-marksheet">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Records</p>
+                <h2>Marksheet Preview</h2>
+            </div>
+            <div class="marksheet-preview" role="button" tabindex="0" data-open-marksheet>
+                <div class="marksheet-preview-overlay">
+                    <span class="marksheet-preview-chip">Academic Document</span>
+                    <strong>View Marksheet</strong>
+                </div>
+            </div>
+            <p class="grade-note">A focused preview keeps the record accessible without making the page feel document-heavy.</p>
+        </article>
+    </section>
+
+    <section class="grade-grid grade-grid-secondary">
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Lessons That Stayed</p>
+                <h2>What I Learned</h2>
+            </div>
+            <ul class="grade-list">
+                <li>Strengthened depth in Mathematics, Physics, and analytical problem solving.</li>
+                <li>Learned how structured preparation improves performance under pressure.</li>
+                <li>Built consistency in balancing conceptual understanding with exam execution.</li>
+            </ul>
+        </article>
+
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Direction Became Clearer</p>
+                <h2>Interests That Grew Stronger</h2>
+            </div>
+            <ul class="grade-list">
+                <li>Stronger curiosity for electronics, systems, and how technical ideas translate into real-world function.</li>
+                <li>Growing interest in engineering pathways that involve logic, design, and intelligent technologies.</li>
+                <li>Clearer motivation to pursue a future connected to ECE and advanced technical problem solving.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="grade-grid grade-grid-secondary">
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">School Highlights</p>
+                <h2>Achievements / Activities</h2>
+            </div>
+            <p class="grade-note">
+                This space can hold subject distinctions, school honors, competitions, leadership roles, or milestone achievements from higher secondary.
+            </p>
+        </article>
+
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Memories</p>
+                <h2>Photo Gallery</h2>
+            </div>
+            <div class="gallery-placeholder-grid">
+                <div class="gallery-placeholder-card">Classroom Memory</div>
+                <div class="gallery-placeholder-card">School Event</div>
+                <div class="gallery-placeholder-card">Academic Milestone</div>
+            </div>
+            <p class="grade-note">Ready for a few curated higher-secondary photos when you share them later.</p>
+        </article>
+    </section>
+</main>
+
+<div class="project-modal" id="marksheet-modal" aria-hidden="true">
+    <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="marksheet-modal-title">
+        <div class="project-modal-header">
+            <div>
+                <p class="project-kicker">Academic Record</p>
+                <h2 class="project-modal-title" id="marksheet-modal-title">12th Grade Marksheet</h2>
+            </div>
+            <button class="modal-close" type="button" aria-label="Close marksheet modal">X</button>
+        </div>
+        <p class="project-modal-copy">
+            This is the space for your actual 12th grade marksheet preview or document embed. Once you share the file, we can replace this placeholder with a polished viewer.
+        </p>
+    </div>
+</div>
+
+<script>
+const twelfthCanvas = document.getElementById("twelfth-particle-canvas");
+const marksheetModal = document.getElementById("marksheet-modal");
+const marksheetTriggers = document.querySelectorAll("[data-open-marksheet]");
+const closeMarksheetButton = marksheetModal.querySelector(".modal-close");
+
+if (twelfthCanvas) {
+  const context = twelfthCanvas.getContext("2d");
+
+  function resizeTwelfthCanvas() {
+    twelfthCanvas.width = window.innerWidth;
+    twelfthCanvas.height = window.innerHeight;
+  }
+
+  resizeTwelfthCanvas();
+
+  const particles = Array.from({ length: 30 }, () => ({
+    x: Math.random() * twelfthCanvas.width,
+    y: Math.random() * twelfthCanvas.height,
+    radius: 1 + Math.random() * 2,
+    alpha: 0.08 + Math.random() * 0.16,
+    dx: -0.28 + Math.random() * 0.56,
+    dy: -0.2 + Math.random() * 0.4
+  }));
+
+  function drawTwelfthParticles() {
+    context.clearRect(0, 0, twelfthCanvas.width, twelfthCanvas.height);
+
+    particles.forEach((particle) => {
+      particle.x += particle.dx;
+      particle.y += particle.dy;
+
+      if (particle.x < -24) particle.x = twelfthCanvas.width + 24;
+      if (particle.x > twelfthCanvas.width + 24) particle.x = -24;
+      if (particle.y < -24) particle.y = twelfthCanvas.height + 24;
+      if (particle.y > twelfthCanvas.height + 24) particle.y = -24;
+
+      const glow = context.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.radius * 8);
+      glow.addColorStop(0, `rgba(200, 189, 223, ${particle.alpha})`);
+      glow.addColorStop(1, "rgba(200, 189, 223, 0)");
+
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius * 8, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    requestAnimationFrame(drawTwelfthParticles);
+  }
+
+  drawTwelfthParticles();
+  window.addEventListener("resize", resizeTwelfthCanvas);
+}
+
+function openMarksheetModal() {
+  marksheetModal.classList.add("is-open");
+  marksheetModal.setAttribute("aria-hidden", "false");
+}
+
+function closeMarksheetModal() {
+  marksheetModal.classList.remove("is-open");
+  marksheetModal.setAttribute("aria-hidden", "true");
+}
+
+marksheetTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", openMarksheetModal);
+  trigger.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openMarksheetModal();
+    }
+  });
+});
+
+closeMarksheetButton.addEventListener("click", closeMarksheetModal);
+marksheetModal.addEventListener("click", (event) => {
+  if (event.target === marksheetModal) {
+    closeMarksheetModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMarksheetModal();
+  }
+});
+</script>
+</body>
+</html>

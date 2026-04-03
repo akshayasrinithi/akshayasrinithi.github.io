@@ -7,15 +7,185 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main class="project-page">
-    <section class="project-hero">
-        <p class="project-kicker">Placeholder Page</p>
-        <h1>Education</h1>
-        <p>This placeholder page is ready for degrees, coursework, certifications, and technical learning milestones.</p>
+<canvas class="particle-canvas" id="education-particle-canvas" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main class="project-page education-page">
+    <section class="project-hero education-hero">
+        <p class="project-kicker">Education</p>
+        <h1>Academic History and Records</h1>
+        <p>AKSHAYA SRINITHI S.V.</p>
         <div class="project-toolbar">
             <a class="action-button primary" href="index.html">Back to Portfolio</a>
         </div>
     </section>
+
+    <section class="education-track-shell" aria-label="Academic timeline categories">
+        <div class="education-track">
+            <a class="education-track-step is-active" href="#tenth-grade" data-target="tenth-grade">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">10th Grade</span>
+            </a>
+            <a class="education-track-step" href="#twelfth-grade" data-target="twelfth-grade">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">12th Grade</span>
+            </a>
+            <a class="education-track-step" href="#bachelors" data-target="bachelors">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Bachelors</span>
+            </a>
+            <a class="education-track-step" href="#masters" data-target="masters">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Masters</span>
+            </a>
+            <a class="education-track-step" href="#courses" data-target="courses">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Courses</span>
+            </a>
+            <a class="education-track-step" href="#competitive-exam" data-target="competitive-exam">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Competitive Exam</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="education-grid" aria-label="Academic record sections">
+        <article class="education-card education-section-card" id="tenth-grade" data-section="tenth-grade">
+            <span class="education-card-kicker">School Foundation</span>
+            <h2>10th Grade</h2>
+            <p>Core school milestones, academic basics, and early records.</p>
+            <a class="education-card-link" href="tenth-grade.html">View Journey</a>
+        </article>
+
+        <article class="education-card education-section-card" id="twelfth-grade" data-section="twelfth-grade">
+            <span class="education-card-kicker">Higher Secondary</span>
+            <h2>12th Grade</h2>
+            <p>Academic stream, higher secondary performance, and transition stage.</p>
+            <a class="education-card-link" href="twelfth-grade.html">View Journey</a>
+        </article>
+
+        <article class="education-card education-section-card" id="bachelors" data-section="bachelors">
+            <span class="education-card-kicker">Degree Path</span>
+            <h2>Bachelors</h2>
+            <p>Undergraduate journey, electronics focus, and technical foundation.</p>
+            <a class="education-card-link" href="bachelors.html">View Journey</a>
+        </article>
+
+        <article class="education-card education-section-card" id="masters" data-section="masters">
+            <span class="education-card-kicker">Future Academic Goal</span>
+            <h2>Masters</h2>
+            <p>Plans, direction, and advanced specialization interests for higher study.</p>
+            <a class="education-card-link" href="masters.html">View Journey</a>
+        </article>
+
+        <article class="education-card education-section-card" id="courses" data-section="courses">
+            <span class="education-card-kicker">Learning Tracks</span>
+            <h2>Courses</h2>
+            <p>Certifications, focused learning, and skill-building coursework.</p>
+            <a class="education-card-link" href="courses.html">View Journey</a>
+        </article>
+
+        <article class="education-card education-section-card" id="competitive-exam" data-section="competitive-exam">
+            <span class="education-card-kicker">Exam Journey</span>
+            <h2>Competitive Exam</h2>
+            <p>Preparation path, exam interests, and performance milestones.</p>
+            <a class="education-card-link" href="competitive-exam.html">View Journey</a>
+        </article>
+    </section>
 </main>
+
+<script>
+const educationCanvas = document.getElementById("education-particle-canvas");
+const timelineLinks = Array.from(document.querySelectorAll(".education-track-step"));
+const educationCards = Array.from(document.querySelectorAll(".education-section-card"));
+
+if (educationCanvas) {
+  const context = educationCanvas.getContext("2d");
+
+  function resizeEducationCanvas() {
+    educationCanvas.width = window.innerWidth;
+    educationCanvas.height = window.innerHeight;
+  }
+
+  resizeEducationCanvas();
+
+  const particles = Array.from({ length: 36 }, () => ({
+    x: Math.random() * educationCanvas.width,
+    y: Math.random() * educationCanvas.height,
+    radius: 1 + Math.random() * 2.1,
+    alpha: 0.08 + Math.random() * 0.14,
+    dx: -0.35 + Math.random() * 0.7,
+    dy: -0.28 + Math.random() * 0.56
+  }));
+
+  function drawEducationParticles() {
+    context.clearRect(0, 0, educationCanvas.width, educationCanvas.height);
+
+    particles.forEach((particle) => {
+      particle.x += particle.dx;
+      particle.y += particle.dy;
+
+      if (particle.x < -24) particle.x = educationCanvas.width + 24;
+      if (particle.x > educationCanvas.width + 24) particle.x = -24;
+      if (particle.y < -24) particle.y = educationCanvas.height + 24;
+      if (particle.y > educationCanvas.height + 24) particle.y = -24;
+
+      const glow = context.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.radius * 9);
+      glow.addColorStop(0, `rgba(200, 189, 223, ${particle.alpha})`);
+      glow.addColorStop(1, "rgba(200, 189, 223, 0)");
+
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius * 9, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    requestAnimationFrame(drawEducationParticles);
+  }
+
+  drawEducationParticles();
+  window.addEventListener("resize", resizeEducationCanvas);
+}
+
+function setActiveTimeline(target) {
+  timelineLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.dataset.target === target);
+  });
+}
+
+timelineLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = link.dataset.target;
+    const section = document.getElementById(targetId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "center" });
+      setActiveTimeline(targetId);
+    }
+  });
+});
+
+educationCards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    setActiveTimeline(card.dataset.section);
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  const visibleEntry = entries
+    .filter((entry) => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+  if (visibleEntry) {
+    setActiveTimeline(visibleEntry.target.dataset.section);
+  }
+}, {
+  threshold: [0.35, 0.55, 0.75]
+});
+
+educationCards.forEach((card) => observer.observe(card));
+</script>
 </body>
 </html>

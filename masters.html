@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masters | Akshaya Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas class="particle-canvas" id="masters-particle-canvas" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main class="project-page grade-page">
+    <section class="project-hero grade-hero">
+        <p class="project-kicker">Future Academic Direction</p>
+        <h1>Masters</h1>
+        <p>A future-focused path centered on VLSI, intelligent hardware systems, and deeper chip design specialization.</p>
+        <div class="project-toolbar">
+            <a class="action-button primary" href="education.html">Back to Education</a>
+        </div>
+    </section>
+
+    <section class="grade-grid">
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Why Masters</p>
+                <h2>Future Direction in VLSI</h2>
+            </div>
+            <p class="grade-note">
+                I see a Masters degree as the next step toward building deeper expertise in VLSI, chip design, and intelligent hardware systems. It represents a transition from foundational engineering into specialized, high-impact technical work.
+            </p>
+        </article>
+
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Academic Goal</p>
+                <h2>What I Want To Build</h2>
+            </div>
+            <ul class="grade-list">
+                <li>Stronger depth in VLSI architecture and semiconductor design.</li>
+                <li>Exposure to advanced chip design workflows and verification.</li>
+                <li>Research-oriented learning connected to intelligent hardware systems.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="grade-grid grade-grid-secondary">
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Specialization</p>
+                <h2>Focus Areas I Want To Explore</h2>
+            </div>
+            <ul class="grade-list">
+                <li>VLSI system design</li>
+                <li>Digital IC design and verification</li>
+                <li>Semiconductor fundamentals</li>
+                <li>AI-assisted hardware design workflows</li>
+                <li>Low-power and intelligent chip systems</li>
+            </ul>
+        </article>
+
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Preparation</p>
+                <h2>What This Step Needs</h2>
+            </div>
+            <ul class="grade-list">
+                <li>Stronger academic depth through undergraduate preparation.</li>
+                <li>Hands-on projects aligned with electronics and VLSI interests.</li>
+                <li>A sharper portfolio that connects AI, systems thinking, and hardware.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="grade-grid grade-grid-secondary">
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Career Vision</p>
+                <h2>Why It Matters To My Future</h2>
+            </div>
+            <p class="grade-note">
+                A Masters in this field would strengthen my path toward contributing to the design of intelligent, efficient, and future-ready hardware systems, especially in areas where electronics and AI intersect.
+            </p>
+        </article>
+
+        <article class="grade-panel">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Long-Term Outcome</p>
+                <h2>What I Hope To Become</h2>
+            </div>
+            <p class="grade-note">
+                I want to grow into an engineer who can work confidently across chip design, system-level thinking, and intelligent hardware innovation with both technical depth and meaningful application.
+            </p>
+        </article>
+    </section>
+</main>
+
+<script>
+const mastersCanvas = document.getElementById("masters-particle-canvas");
+
+if (mastersCanvas) {
+  const context = mastersCanvas.getContext("2d");
+
+  function resizeMastersCanvas() {
+    mastersCanvas.width = window.innerWidth;
+    mastersCanvas.height = window.innerHeight;
+  }
+
+  resizeMastersCanvas();
+
+  const particles = Array.from({ length: 28 }, () => ({
+    x: Math.random() * mastersCanvas.width,
+    y: Math.random() * mastersCanvas.height,
+    radius: 1 + Math.random() * 2,
+    alpha: 0.08 + Math.random() * 0.16,
+    dx: -0.28 + Math.random() * 0.56,
+    dy: -0.2 + Math.random() * 0.4
+  }));
+
+  function drawMastersParticles() {
+    context.clearRect(0, 0, mastersCanvas.width, mastersCanvas.height);
+
+    particles.forEach((particle) => {
+      particle.x += particle.dx;
+      particle.y += particle.dy;
+
+      if (particle.x < -24) particle.x = mastersCanvas.width + 24;
+      if (particle.x > mastersCanvas.width + 24) particle.x = -24;
+      if (particle.y < -24) particle.y = mastersCanvas.height + 24;
+      if (particle.y > mastersCanvas.height + 24) particle.y = -24;
+
+      const glow = context.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.radius * 8);
+      glow.addColorStop(0, `rgba(200, 189, 223, ${particle.alpha})`);
+      glow.addColorStop(1, "rgba(200, 189, 223, 0)");
+
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius * 8, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    requestAnimationFrame(drawMastersParticles);
+  }
+
+  drawMastersParticles();
+  window.addEventListener("resize", resizeMastersCanvas);
+}
+</script>
+</body>
+</html>
