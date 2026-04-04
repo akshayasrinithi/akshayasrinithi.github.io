@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelors Grades | Akshaya Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas class="particle-canvas" id="bachelors-grades-particle-canvas" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main class="project-page grade-page">
+    <section class="project-hero grade-hero">
+        <div class="academic-hero-layout">
+            <div class="academic-hero-copy">
+                <p class="project-kicker">Academic Record</p>
+                <h1>Bachelors Grades</h1>
+                <p>A complete subject-wise view of the consolidated marksheet, organized into core papers, labs, English, mathematics, and other subjects.</p>
+                <label class="grades-search" for="grades-search-input">
+                    <span class="grade-stat-label">Search Papers</span>
+                    <input id="grades-search-input" type="search" placeholder="Search a subject or paper name">
+                </label>
+                <div class="grades-search-suggestions" id="grades-search-suggestions" aria-live="polite"></div>
+                <div class="project-toolbar">
+                    <a class="action-button primary" href="bachelors.html">Back to Bachelors</a>
+                </div>
+            </div>
+            <div class="academic-switcher" aria-label="Academic page navigation">
+                <a class="academic-switch-link" href="tenth-grade.html">10th Grade</a>
+                <a class="academic-switch-link" href="twelfth-grade.html">12th Grade</a>
+                <a class="academic-switch-link" href="bachelors.html">Bachelors</a>
+                <a class="academic-switch-link" href="masters.html">Masters</a>
+                <a class="academic-switch-link" href="courses.html">Courses</a>
+                <a class="academic-switch-link" href="competitive-exam.html">Competitive Exam</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="grades-lookup-grid grades-lookup-grid-top">
+        <article class="grade-panel grade-search-section is-tall grades-core-subjects-panel" id="grades-core-subjects">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Core ECE Papers</p>
+                <h2>Core Subjects</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Circuit Analysis"><td>Circuit Analysis</td><td>B+</td></tr>
+                        <tr data-subject="Control Systems"><td>Control Systems</td><td>B+</td></tr>
+                        <tr data-subject="Electronic Devices and Circuits"><td>Electronic Devices and Circuits</td><td>A</td></tr>
+                        <tr data-subject="Signals and Systems"><td>Signals and Systems</td><td>B+</td></tr>
+                        <tr data-subject="Digital Systems Design"><td>Digital Systems Design</td><td>A</td></tr>
+                        <tr data-subject="Linear Integrated Circuits"><td>Linear Integrated Circuits</td><td>A</td></tr>
+                        <tr data-subject="Electromagnetic Fields"><td>Electromagnetic Fields</td><td>A</td></tr>
+                        <tr data-subject="Communication Systems"><td>Communication Systems</td><td>A</td></tr>
+                        <tr data-subject="Digital Signal Processing"><td>Digital Signal Processing</td><td>B</td></tr>
+                        <tr data-subject="Transmission Lines and RF Systems"><td>Transmission Lines and RF Systems</td><td>B+</td></tr>
+                        <tr data-subject="Wireless Communication"><td>Wireless Communication</td><td>A</td></tr>
+                        <tr data-subject="4G/5G Communication Networks"><td>4G/5G Communication Networks</td><td>A</td></tr>
+                        <tr data-subject="Satellite Communication"><td>Satellite Communication</td><td>A</td></tr>
+                        <tr data-subject="Analog IC Design"><td>Analog IC Design</td><td>A</td></tr>
+                        <tr data-subject="VLSI and Chip Design"><td>VLSI and Chip Design</td><td>B+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-search-section" id="grades-core-practicals">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Laboratories and Applied Work</p>
+                <h2>Core Practicals</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Circuits Analysis Laboratory"><td>Circuits Analysis Laboratory</td><td>A+</td></tr>
+                        <tr data-subject="Engineering Practices Laboratory"><td>Engineering Practices Laboratory</td><td>A+</td></tr>
+                        <tr data-subject="Electronic Devices and Circuits Laboratory"><td>Electronic Devices and Circuits Laboratory</td><td>A+</td></tr>
+                        <tr data-subject="Communication Systems Laboratory"><td>Communication Systems Laboratory</td><td>A+</td></tr>
+                        <tr data-subject="Linear Integrated Circuits Laboratory"><td>Linear Integrated Circuits Laboratory</td><td>A+</td></tr>
+                        <tr data-subject="VLSI Laboratory"><td>VLSI Laboratory</td><td>A+</td></tr>
+                        <tr data-subject="Project Report Writing"><td>Project Report Writing</td><td>A</td></tr>
+                        <tr data-subject="Project Work"><td>Project Work</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-search-section" id="grades-mathematics">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Analytical Foundations</p>
+                <h2>Mathematics</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Matrices and Calculus"><td>Matrices and Calculus</td><td>B+</td></tr>
+                        <tr data-subject="Statistics and Numerical Methods"><td>Statistics and Numerical Methods</td><td>B+</td></tr>
+                        <tr data-subject="Random Processes and Linear Algebra"><td>Random Processes and Linear Algebra</td><td>B+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <section class="grades-lookup-grid grades-lookup-grid-programming">
+        <article class="grade-panel grade-search-section" id="grades-programming">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Programming Foundations</p>
+                <h2>Programming and Data Structures</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Problem Solving and Python Programming"><td>Problem Solving and Python Programming</td><td>A</td></tr>
+                        <tr data-subject="C Programming and Data Structures"><td>C Programming and Data Structures</td><td>B+</td></tr>
+                        <tr data-subject="Problem Solving and Python Programming Laboratory"><td>Problem Solving and Python Programming Laboratory</td><td>A</td></tr>
+                        <tr data-subject="C Programming and Data Structures Laboratory"><td>C Programming and Data Structures Laboratory</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-search-section" id="grades-english">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Language Papers</p>
+                <h2>English</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Professional English I"><td>Professional English I</td><td>A+</td></tr>
+                        <tr data-subject="Professional English II"><td>Professional English II</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-search-section" id="grades-allied-branches">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Cross-Disciplinary Learning</p>
+                <h2>Allied Engineering Papers</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Engineering Graphics"><td>Engineering Graphics</td><td>A</td></tr>
+                        <tr data-subject="Electrical and Instrumentation Engineering"><td>Electrical and Instrumentation Engineering</td><td>B+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <section class="grades-lookup-grid">
+        <article class="grade-panel grade-search-section" id="grades-intelligent-systems">
+            <div class="grade-panel-header">
+                <p class="project-kicker">AI and Emerging Systems</p>
+                <h2>Intelligent and Automation Papers</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Artificial Intelligence and Machine Learning"><td>Artificial Intelligence and Machine Learning</td><td>A+</td></tr>
+                        <tr data-subject="Embedded Systems and IoT Design"><td>Embedded Systems and IoT Design</td><td>A</td></tr>
+                        <tr data-subject="Industrial IoT and Industry 4.0 - Ingage"><td>Industrial IoT and Industry 4.0 - Ingage</td><td>A+</td></tr>
+                        <tr data-subject="Robotic Process Automation"><td>Robotic Process Automation</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-search-section" id="grades-electives">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Choice-Based Learning</p>
+                <h2>Electives</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Networks and Security"><td>Networks and Security</td><td>A</td></tr>
+                        <tr data-subject="Digital Marketing"><td>Digital Marketing</td><td>A+</td></tr>
+                        <tr data-subject="Wearable Devices"><td>Wearable Devices</td><td>A</td></tr>
+                        <tr data-subject="Image Processing"><td>Image Processing</td><td>B</td></tr>
+                        <tr data-subject="Renewable Energy Technologies"><td>Renewable Energy Technologies</td><td>A</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <section class="grades-lookup-grid">
+        <article class="grade-panel grade-search-section" id="grades-science-foundations">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Foundational Sciences</p>
+                <h2>Physics and Chemistry</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Engineering Chemistry"><td>Engineering Chemistry</td><td>A+</td></tr>
+                        <tr data-subject="Engineering Physics"><td>Engineering Physics</td><td>B+</td></tr>
+                        <tr data-subject="Physics for Electronics Engineering"><td>Physics for Electronics Engineering</td><td>B+</td></tr>
+                        <tr data-subject="Physics and Chemistry Laboratory"><td>Physics and Chemistry Laboratory</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="grade-panel grade-search-section" id="grades-professional-papers">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Professional and Interdisciplinary</p>
+                <h2>Professional Papers</h2>
+            </div>
+            <div class="grade-marks-table-wrap">
+                <table class="grade-marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-subject="Environmental Sciences and Sustainability"><td>Environmental Sciences and Sustainability</td><td>B+</td></tr>
+                        <tr data-subject="Disaster Risk Reduction and Management"><td>Disaster Risk Reduction and Management</td><td>A+</td></tr>
+                        <tr data-subject="Industrial Safety"><td>Industrial Safety</td><td>A+</td></tr>
+                        <tr data-subject="Principles of Management"><td>Principles of Management</td><td>A</td></tr>
+                        <tr data-subject="Human Values and Ethics"><td>Human Values and Ethics</td><td>A</td></tr>
+                        <tr data-subject="Professional Development"><td>Professional Development</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <div class="grade-search-empty" id="grade-search-empty">No matching paper found. Try a broader subject name.</div>
+</main>
+
+<script>
+const bachelorsGradesCanvas = document.getElementById("bachelors-grades-particle-canvas");
+const gradesSearchInput = document.getElementById("grades-search-input");
+const gradeSections = Array.from(document.querySelectorAll(".grade-search-section"));
+const gradeSearchEmpty = document.getElementById("grade-search-empty");
+const gradeSearchSuggestions = document.getElementById("grades-search-suggestions");
+const gradeRows = Array.from(document.querySelectorAll(".grade-search-section tbody tr"));
+
+if (bachelorsGradesCanvas) {
+  const context = bachelorsGradesCanvas.getContext("2d");
+
+  function resizeBachelorsGradesCanvas() {
+    bachelorsGradesCanvas.width = window.innerWidth;
+    bachelorsGradesCanvas.height = window.innerHeight;
+  }
+
+  resizeBachelorsGradesCanvas();
+
+  const particles = Array.from({ length: 30 }, () => ({
+    x: Math.random() * bachelorsGradesCanvas.width,
+    y: Math.random() * bachelorsGradesCanvas.height,
+    radius: 1 + Math.random() * 2,
+    alpha: 0.08 + Math.random() * 0.16,
+    dx: -0.28 + Math.random() * 0.56,
+    dy: -0.2 + Math.random() * 0.4
+  }));
+
+  function drawBachelorsGradesParticles() {
+    context.clearRect(0, 0, bachelorsGradesCanvas.width, bachelorsGradesCanvas.height);
+
+    particles.forEach((particle) => {
+      particle.x += particle.dx;
+      particle.y += particle.dy;
+
+      if (particle.x < -24) particle.x = bachelorsGradesCanvas.width + 24;
+      if (particle.x > bachelorsGradesCanvas.width + 24) particle.x = -24;
+      if (particle.y < -24) particle.y = bachelorsGradesCanvas.height + 24;
+      if (particle.y > bachelorsGradesCanvas.height + 24) particle.y = -24;
+
+      const glow = context.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.radius * 8);
+      glow.addColorStop(0, `rgba(200, 189, 223, ${particle.alpha})`);
+      glow.addColorStop(1, "rgba(200, 189, 223, 0)");
+
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius * 8, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    requestAnimationFrame(drawBachelorsGradesParticles);
+  }
+
+  drawBachelorsGradesParticles();
+  window.addEventListener("resize", resizeBachelorsGradesCanvas);
+}
+
+if (gradesSearchInput) {
+  const subjectMap = gradeRows.map((row) => ({
+    name: row.dataset.subject || row.cells[0]?.textContent.trim() || "",
+    row,
+    section: row.closest(".grade-search-section")
+  })).filter((item) => item.name);
+
+  function clearRowHighlights() {
+    gradeRows.forEach((row) => row.classList.remove("is-search-hit"));
+  }
+
+  function renderSuggestions(query) {
+    if (!gradeSearchSuggestions) return;
+
+    gradeSearchSuggestions.innerHTML = "";
+
+    if (!query) {
+      return;
+    }
+
+    const matches = subjectMap
+      .filter((item) => item.name.toLowerCase().includes(query))
+      .slice(0, 8);
+
+    if (!matches.length) {
+      const empty = document.createElement("div");
+      empty.className = "grades-search-empty-state";
+      empty.textContent = "No matching paper suggestions yet.";
+      gradeSearchSuggestions.appendChild(empty);
+      return;
+    }
+
+    matches.forEach((item) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "grades-search-suggestion";
+      button.textContent = item.name;
+      button.addEventListener("click", () => {
+        gradesSearchInput.value = item.name;
+        runGradeSearch();
+        clearRowHighlights();
+        item.row.classList.add("is-search-hit");
+        item.section.hidden = false;
+        item.section.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      gradeSearchSuggestions.appendChild(button);
+    });
+  }
+
+  const runGradeSearch = () => {
+    const query = gradesSearchInput.value.trim().toLowerCase();
+    let visibleSections = 0;
+
+    clearRowHighlights();
+
+    gradeSections.forEach((section) => {
+      const rows = Array.from(section.querySelectorAll("tbody tr"));
+      let visibleRows = 0;
+
+      rows.forEach((row) => {
+        const text = row.textContent.toLowerCase();
+        const isMatch = !query || text.includes(query);
+        row.hidden = !isMatch;
+        if (isMatch) {
+          visibleRows += 1;
+        }
+      });
+
+      section.hidden = visibleRows === 0;
+      if (visibleRows > 0) {
+        visibleSections += 1;
+      }
+    });
+
+    renderSuggestions(query);
+
+    if (gradeSearchEmpty) {
+      gradeSearchEmpty.classList.toggle("is-visible", visibleSections === 0);
+    }
+  };
+
+  gradesSearchInput.addEventListener("input", runGradeSearch);
+  gradesSearchInput.addEventListener("search", runGradeSearch);
+  runGradeSearch();
+}
+</script>
+</body>
+</html>

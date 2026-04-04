@@ -520,6 +520,19 @@ a {
     gap: 14px;
 }
 
+.academic-hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 24px;
+    align-items: start;
+}
+
+.academic-hero-copy {
+    display: grid;
+    gap: 14px;
+    min-width: 0;
+}
+
 .project-kicker {
     margin: 0;
     color: var(--accent);
@@ -653,6 +666,56 @@ a {
     padding: 22px 24px;
 }
 
+.academic-switcher {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.academic-hero-layout .academic-switcher {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-self: stretch;
+    align-content: start;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+.academic-switch-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(200, 189, 223, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(231, 225, 241, 0.86);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.academic-switch-link:hover,
+.academic-switch-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(214, 205, 232, 0.3);
+    box-shadow: 0 18px 34px rgba(18, 12, 28, 0.24);
+    background: rgba(200, 189, 223, 0.08);
+    color: var(--text);
+    outline: none;
+}
+
+.academic-switch-link.is-current {
+    background: linear-gradient(135deg, rgba(200, 189, 223, 0.16), rgba(148, 131, 183, 0.16));
+    border-color: rgba(214, 205, 232, 0.32);
+    color: var(--text);
+    box-shadow: 0 0 0 1px rgba(214, 205, 232, 0.08);
+}
+
 .education-track {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -662,6 +725,32 @@ a {
 
 .tenth-track {
     grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.bachelors-track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.bachelors-lines-shell {
+    display: grid;
+    gap: 16px;
+    padding: 24px 28px;
+}
+
+.bachelors-track-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px 14px;
+    align-items: stretch;
+}
+
+.bachelors-track-row.is-compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 78%;
+    margin: 0 auto;
+}
+
+.education-track-spacer {
+    display: block;
 }
 
 .education-track-step {
@@ -711,6 +800,11 @@ a {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     line-height: 1.4;
+}
+
+.bachelors-lines-shell .education-track-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
 }
 
 .education-track-step.is-active .education-track-dot {
@@ -873,6 +967,19 @@ a {
     min-height: 100%;
 }
 
+.bachelors-balance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.bachelors-side-stack {
+    display: grid;
+    gap: 22px;
+    align-content: start;
+}
+
 .bachelors-context {
     border-radius: 24px;
     padding: 18px;
@@ -948,8 +1055,21 @@ a {
 
 .grade-stat-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
+}
+
+#degree-overview .grade-panel-header {
+    gap: 10px;
+}
+
+#degree-overview .grade-panel-header h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+}
+
+#degree-overview .grade-stat {
+    min-height: 118px;
+    align-content: center;
 }
 
 .grade-stat {
@@ -973,6 +1093,20 @@ a {
     color: var(--text);
 }
 
+.grade-stat-link {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200, 189, 223, 0.28);
+    transition: border-color 220ms ease, color 220ms ease;
+}
+
+.grade-stat-link:hover,
+.grade-stat-link:focus-visible {
+    color: var(--accent);
+    border-color: rgba(200, 189, 223, 0.56);
+    outline: none;
+}
+
 .grade-marks-table-wrap {
     overflow-x: auto;
     border-radius: 22px;
@@ -983,7 +1117,8 @@ a {
 .grade-marks-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 520px;
+    min-width: 0;
+    table-layout: fixed;
 }
 
 .grade-marks-table th,
@@ -1004,6 +1139,7 @@ a {
 .grade-marks-table td {
     color: var(--muted);
     line-height: 1.55;
+    word-break: break-word;
 }
 
 .grade-marks-table tr:last-child td {
@@ -1019,10 +1155,460 @@ a {
     line-height: 1.7;
 }
 
+.grade-list.compact {
+    gap: 10px;
+    padding-left: 18px;
+}
+
 .grade-note {
     margin: 0;
     color: var(--muted);
     line-height: 1.7;
+}
+
+.bachelors-year-timeline {
+    display: grid;
+    gap: 18px;
+}
+
+.bachelors-year-step {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.bachelors-year-marker {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    padding-top: 6px;
+}
+
+.bachelors-year-marker::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    bottom: -20px;
+    width: 1px;
+    background: rgba(188, 180, 206, 0.18);
+}
+
+.bachelors-year-step:last-child .bachelors-year-marker::after {
+    display: none;
+}
+
+.bachelors-year-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(200, 189, 223, 1), rgba(148, 131, 183, 1));
+    border: 1px solid rgba(228, 220, 241, 0.72);
+    box-shadow:
+        0 0 0 6px rgba(200, 189, 223, 0.06),
+        0 0 22px rgba(148, 131, 183, 0.2);
+}
+
+.bachelors-year-content {
+    display: grid;
+    gap: 10px;
+    padding: 2px 0 0;
+}
+
+.bachelors-year-label {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.internship-timeline-panel {
+    gap: 24px;
+}
+
+.internship-timeline {
+    display: grid;
+    gap: 22px;
+}
+
+.internship-step {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.internship-line {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    padding-top: 14px;
+}
+
+.internship-line::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    bottom: -26px;
+    width: 1px;
+    background: rgba(188, 180, 206, 0.18);
+}
+
+.internship-step:last-child .internship-line::after {
+    display: none;
+}
+
+.internship-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(200, 189, 223, 1), rgba(148, 131, 183, 1));
+    border: 1px solid rgba(228, 220, 241, 0.72);
+    box-shadow:
+        0 0 0 6px rgba(200, 189, 223, 0.06),
+        0 0 22px rgba(148, 131, 183, 0.2);
+}
+
+.internship-card {
+    display: grid;
+    gap: 20px;
+    padding: 22px;
+    border-radius: 24px;
+    border: 1px solid rgba(200, 189, 223, 0.12);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+        rgba(255, 255, 255, 0.03);
+}
+
+.internship-card-top {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) auto;
+    gap: 20px;
+    align-items: start;
+}
+
+.internship-brand {
+    min-height: 128px;
+    border-radius: 22px;
+    border: 1px solid rgba(200, 189, 223, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    display: grid;
+    place-items: center;
+    padding: 18px;
+}
+
+.internship-summary {
+    display: grid;
+    gap: 10px;
+}
+
+.internship-top-action {
+    display: grid;
+    align-self: start;
+    justify-items: end;
+}
+
+.internship-certificate-trigger {
+    cursor: pointer;
+    font: inherit;
+}
+
+.internship-card-bottom {
+    display: grid;
+    gap: 16px;
+}
+
+.internship-logo {
+    width: min(100%, 220px);
+    height: 82px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 8px 12px;
+}
+
+.internship-period {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.internship-card h3 {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+.internship-company {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.internship-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.internship-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.internship-detail-block {
+    display: grid;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(200, 189, 223, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.internship-skill-block {
+    display: grid;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(200, 189, 223, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.internship-detail-title {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.internship-company-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200, 189, 223, 0.2);
+    transition: color 220ms ease, border-color 220ms ease;
+}
+
+.internship-company-link:hover,
+.internship-company-link:focus-visible {
+    color: var(--text);
+    border-color: rgba(200, 189, 223, 0.5);
+    outline: none;
+}
+
+.internship-certificate-item {
+    width: min(100%, 320px);
+}
+
+.internship-certificate-item img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.grades-search {
+    display: grid;
+    gap: 10px;
+    max-width: 420px;
+}
+
+.grades-search input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(200, 189, 223, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.grades-search input::placeholder {
+    color: rgba(220, 214, 231, 0.48);
+}
+
+.grades-search input:focus {
+    border-color: rgba(214, 205, 232, 0.34);
+    box-shadow: 0 0 0 4px rgba(200, 189, 223, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.grades-lookup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.grades-lookup-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grades-lookup-grid-programming {
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.84fr);
+    grid-template-areas:
+        "programming english"
+        "programming allied";
+}
+
+.grades-lookup-grid-programming #grades-programming {
+    grid-area: programming;
+}
+
+.grades-lookup-grid-programming #grades-english {
+    grid-area: english;
+}
+
+.grades-lookup-grid-programming #grades-allied-branches {
+    grid-area: allied;
+}
+
+.grades-lookup-grid-top {
+    grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+    grid-template-areas:
+        "core practicals"
+        "core mathematics";
+    align-items: start;
+}
+
+.grades-core-subjects-panel {
+    grid-area: core;
+}
+
+#grades-core-practicals {
+    grid-area: practicals;
+}
+
+#grades-mathematics {
+    grid-area: mathematics;
+}
+
+#grades-mathematics .grade-marks-table {
+    min-width: 0;
+}
+
+.grades-lookup-grid-top .grade-panel {
+    padding: 20px;
+}
+
+.grades-lookup-grid-top .grade-panel-header {
+    gap: 6px;
+}
+
+.grades-lookup-grid-top .grade-panel-header h2 {
+    font-size: clamp(1.55rem, 2.3vw, 2rem);
+}
+
+.grades-lookup-grid-top .grade-marks-table th,
+.grades-lookup-grid-top .grade-marks-table td {
+    padding: 11px 14px;
+}
+
+.grades-lookup-grid-top .grade-marks-table th {
+    font-size: 0.74rem;
+}
+
+.grades-lookup-grid-top .grade-marks-table td {
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.grades-lookup-grid-top .grade-marks-table th:first-child,
+.grades-lookup-grid-top .grade-marks-table td:first-child {
+    width: 74%;
+}
+
+.grades-lookup-grid-top .grade-marks-table th:last-child,
+.grades-lookup-grid-top .grade-marks-table td:last-child {
+    width: 26%;
+}
+
+.grades-lookup-grid .grade-panel {
+    min-height: 100%;
+}
+
+.grade-search-section.is-tall {
+    align-content: start;
+}
+
+.grade-search-section.is-wide {
+    grid-column: 1 / -1;
+}
+
+.grades-search-suggestions {
+    display: grid;
+    gap: 8px;
+    max-width: 560px;
+}
+
+.grades-search-suggestion,
+.grades-search-empty-state {
+    min-height: 44px;
+    padding: 11px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(200, 189, 223, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    text-align: left;
+    font: inherit;
+}
+
+.grades-search-suggestion {
+    cursor: pointer;
+    transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.grades-search-suggestion:hover,
+.grades-search-suggestion:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(214, 205, 232, 0.3);
+    background: rgba(200, 189, 223, 0.08);
+    box-shadow: 0 18px 34px rgba(18, 12, 28, 0.24);
+    outline: none;
+}
+
+.grades-search-empty-state {
+    color: var(--muted);
+}
+
+.grade-search-empty {
+    display: none;
+    padding: 18px 20px;
+    border-radius: 20px;
+    border: 1px dashed rgba(200, 189, 223, 0.2);
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.grade-search-empty.is-visible {
+    display: block;
+}
+
+.grade-marks-table tbody tr.is-search-hit td {
+    background: rgba(200, 189, 223, 0.12);
+    color: var(--text);
+}
+
+.grade-rank-highlight {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(200, 189, 223, 0.16), rgba(148, 131, 183, 0.14));
+    border: 1px solid rgba(200, 189, 223, 0.22);
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .gallery-placeholder-grid {
@@ -1183,8 +1769,25 @@ a {
         row-gap: 18px;
     }
 
-    .tenth-track {
+    .academic-switcher {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .academic-hero-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-hero-layout .academic-switcher {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tenth-track,
+    .bachelors-track,
+    .bachelors-track-row,
+    .bachelors-track-row.is-compact {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: none;
+        margin: 0;
     }
 
     .education-grid {
@@ -1200,10 +1803,32 @@ a {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .bachelors-top,
-    .bachelors-hero-grid {
+    .grades-lookup-grid {
         grid-template-columns: 1fr;
     }
+
+    .grades-lookup-grid-top {
+        grid-template-columns: 1fr;
+    }
+
+    .grades-lookup-grid-three {
+        grid-template-columns: 1fr;
+    }
+
+    .grades-lookup-grid-programming {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "programming"
+            "english"
+            "allied";
+    }
+
+    .bachelors-top,
+    .bachelors-hero-grid,
+    .bachelors-balance-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media (max-width: 720px) {
@@ -1282,9 +1907,23 @@ a {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .tenth-track {
+    .academic-switcher {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .academic-hero-layout .academic-switcher {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tenth-track,
+    .bachelors-track,
+    .bachelors-track-row,
+    .bachelors-track-row.is-compact {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: none;
+        margin: 0;
+    }
+
 
     .education-grid {
         grid-template-columns: 1fr;
@@ -1302,6 +1941,26 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .grades-lookup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grades-lookup-grid-top {
+        grid-template-columns: 1fr;
+    }
+
+    .grades-lookup-grid-three {
+        grid-template-columns: 1fr;
+    }
+
+    .grades-lookup-grid-programming {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "programming"
+            "english"
+            "allied";
+    }
+
     .grade-panel {
         padding: 20px;
     }
@@ -1313,6 +1972,45 @@ a {
     .grade-stat-grid,
     .gallery-placeholder-grid {
         grid-template-columns: 1fr;
+    }
+
+    .internship-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-card-top {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-brand {
+        min-height: 110px;
+    }
+
+    .internship-top-action {
+        justify-items: start;
+    }
+
+    .gallery-real-grid {
+        gap: 16px;
+    }
+
+    .grade-gallery-item img {
+        height: 220px;
+    }
+
+    .grade-gallery-item figcaption {
+        padding: 14px 15px 16px;
+        font-size: 0.92rem;
+    }
+
+    .grade-rank-highlight {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
     }
 
     .marksheet-preview {

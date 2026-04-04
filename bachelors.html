@@ -12,25 +12,8 @@
 <div class="ambient ambient-two"></div>
 
 <main class="project-page grade-page">
-    <section class="bachelors-top">
-        <aside class="bachelors-context" aria-label="Bachelors page topics">
-            <p class="project-kicker">On This Page</p>
-            <div class="bachelors-context-list">
-                <a href="#degree-overview">Academic Snapshot</a>
-                <a href="#engineering-growth">Engineering Growth</a>
-                <a href="#core-focus">Core Focus Areas</a>
-                <a href="#core-subjects">Core Subjects</a>
-                <a href="#core-practicals">Core Practicals</a>
-                <a href="#tools-platforms">Tools and Platforms</a>
-                <a href="#project-work">Projects and Practical Work</a>
-                <a href="#industrial-visits">Industrial Visits and Group Activities</a>
-                <a href="#internships">Internship During Bachelors</a>
-                <a href="#milestones">Achievements / Highlights</a>
-                <a href="#future-direction">How It Connects to My Future</a>
-            </div>
-        </aside>
-
-        <section class="project-hero grade-hero bachelors-hero-panel">
+    <section class="project-hero grade-hero bachelors-hero-panel">
+        <div class="academic-hero-layout">
             <div class="bachelors-hero-copy">
                 <p class="project-kicker">Undergraduate Journey</p>
                 <h1>Bachelors</h1>
@@ -39,186 +22,257 @@
                     <a class="action-button primary" href="education.html">Back to Education</a>
                 </div>
             </div>
-        </section>
+            <div class="academic-switcher" aria-label="Academic page navigation">
+                <a class="academic-switch-link" href="tenth-grade.html">10th Grade</a>
+                <a class="academic-switch-link" href="twelfth-grade.html">12th Grade</a>
+                <a class="academic-switch-link is-current" href="bachelors.html" aria-current="page">Bachelors</a>
+                <a class="academic-switch-link" href="masters.html">Masters</a>
+                <a class="academic-switch-link" href="courses.html">Courses</a>
+                <a class="academic-switch-link" href="competitive-exam.html">Competitive Exam</a>
+            </div>
+        </div>
     </section>
 
-    <section class="grade-grid">
-        <article class="grade-panel" id="degree-overview">
+    <section class="education-track-shell bachelors-lines-shell" aria-label="Bachelors topic tracker">
+        <div class="education-track bachelors-track-row">
+            <a class="education-track-step is-active" href="#degree-overview" data-target="degree-overview">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Academic Snapshot</span>
+            </a>
+            <a class="education-track-step" href="#engineering-growth" data-target="engineering-growth">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Engineering Growth</span>
+            </a>
+            <a class="education-track-step" href="#core-focus" data-target="core-focus">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Core Focus</span>
+            </a>
+            <a class="education-track-step" href="#tools-platforms" data-target="tools-platforms">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Grades</span>
+            </a>
+        </div>
+        <div class="education-track bachelors-track-row">
+            <a class="education-track-step" href="#project-work" data-target="project-work">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Projects</span>
+            </a>
+            <a class="education-track-step" href="#industrial-visits" data-target="industrial-visits">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Visits and Activities</span>
+            </a>
+            <a class="education-track-step" href="#internships" data-target="internships">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Internship</span>
+            </a>
+            <a class="education-track-step" href="#milestones" data-target="milestones">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Competition Wins</span>
+            </a>
+        </div>
+        <div class="education-track bachelors-track-row is-compact">
+            <a class="education-track-step" href="#bachelors-gallery" data-target="bachelors-gallery">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Gallery</span>
+            </a>
+            <a class="education-track-step" href="#future-direction" data-target="future-direction">
+                <span class="education-track-dot"></span>
+                <span class="education-track-label">Future Direction</span>
+            </a>
+            <span class="education-track-spacer" aria-hidden="true"></span>
+        </div>
+    </section>
+
+    <section class="grade-grid grade-grid-full">
+        <article class="grade-panel grade-section-card" id="degree-overview" data-section="degree-overview">
             <div class="grade-panel-header">
                 <p class="project-kicker">Academic Snapshot</p>
                 <h2>Degree Overview</h2>
             </div>
             <div class="grade-stat-grid">
                 <div class="grade-stat">
-                    <span class="grade-stat-label">College / University</span>
-                    <strong>To Be Added</strong>
+                    <span class="grade-stat-label">College</span>
+                    <strong>Anand Institute of Higher Technology</strong>
                 </div>
                 <div class="grade-stat">
-                    <span class="grade-stat-label">Degree</span>
-                    <strong>B.E / B.Tech - To Be Added</strong>
+                    <span class="grade-stat-label">University</span>
+                    <strong>Anna University</strong>
                 </div>
                 <div class="grade-stat">
                     <span class="grade-stat-label">Branch</span>
-                    <strong>Electronics / Related Field</strong>
+                    <strong>Electronics and Communication Engineering</strong>
                 </div>
                 <div class="grade-stat">
                     <span class="grade-stat-label">Year</span>
-                    <strong>To Be Added</strong>
+                    <strong>2021 - 2025</strong>
                 </div>
                 <div class="grade-stat">
                     <span class="grade-stat-label">CGPA</span>
-                    <strong>To Be Added</strong>
+                    <strong>8.12</strong>
                 </div>
                 <div class="grade-stat">
-                    <span class="grade-stat-label">Academic Focus</span>
-                    <strong>ECE, Intelligent Systems, Design Thinking</strong>
+                    <span class="grade-stat-label">Location</span>
+                    <strong><a class="grade-stat-link" href="https://www.google.com/maps/dir//Anand+Institute+of+Higher+Technology,+Kalasalingam+Nagar+IT+Corridor,+Rajiv+Gandhi+Salai,+Road,+Kazhipattur,+Tamil+Nadu+603103/@12.9330849,80.2432831,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a525a64a9d9fdbd:0xfe20d2c9e0df4861!2m2!1d80.2285306!2d12.8182891?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer">Kazhipattur, Chennai</a></strong>
                 </div>
             </div>
         </article>
+    </section>
 
-        <article class="grade-panel" id="engineering-growth">
+    <section class="bachelors-balance-grid">
+        <article class="grade-panel grade-section-card" id="engineering-growth" data-section="engineering-growth">
             <div class="grade-panel-header">
                 <p class="project-kicker">What Shaped Me</p>
                 <h2>Engineering Growth</h2>
             </div>
-            <ul class="grade-list">
-                <li>Moved from learning concepts to understanding how real systems are designed and tested.</li>
-                <li>Built stronger engineering thinking through labs, technical problem solving, and applied coursework.</li>
-                <li>Started connecting electronics foundations with intelligent and future-facing technologies.</li>
-            </ul>
+            <div class="bachelors-year-timeline">
+                <article class="bachelors-year-step">
+                    <div class="bachelors-year-marker">
+                        <span class="bachelors-year-dot"></span>
+                    </div>
+                    <div class="bachelors-year-content">
+                        <p class="bachelors-year-label">First Year</p>
+                        <ul class="grade-list compact">
+                            <li>Learned <strong>C programming</strong>.</li>
+                            <li>Explored <strong>Networking</strong> and <strong>IoT basics</strong>.</li>
+                            <li>Adapted to <strong>college academics</strong> and <strong>labs</strong>.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="bachelors-year-step">
+                    <div class="bachelors-year-marker">
+                        <span class="bachelors-year-dot"></span>
+                    </div>
+                    <div class="bachelors-year-content">
+                        <p class="bachelors-year-label">Second Year</p>
+                        <ul class="grade-list compact">
+                            <li>Participated in <strong>Symposiums</strong>.</li>
+                            <li>Built <strong>Electronic Circuits</strong> at the <strong>board level</strong>.</li>
+                            <li>Worked on <strong>IoT</strong> and <strong>Embedded Systems</strong>.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="bachelors-year-step">
+                    <div class="bachelors-year-marker">
+                        <span class="bachelors-year-dot"></span>
+                    </div>
+                    <div class="bachelors-year-content">
+                        <p class="bachelors-year-label">Pre-Final Year</p>
+                        <ul class="grade-list compact">
+                            <li>Joined <strong>Hackathons</strong>.</li>
+                            <li>Learned <strong>UI/UX</strong> and <strong>Bootstrap</strong>.</li>
+                            <li>Explored <strong>Software Development</strong> and <strong>CS domains</strong>.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="bachelors-year-step">
+                    <div class="bachelors-year-marker">
+                        <span class="bachelors-year-dot"></span>
+                    </div>
+                    <div class="bachelors-year-content">
+                        <p class="bachelors-year-label">Final Year</p>
+                        <ul class="grade-list compact">
+                            <li>Built projects in <strong>ML</strong> and <strong>AI</strong>.</li>
+                            <li>Presented <strong>papers</strong> and <strong>research</strong>.</li>
+                            <li>Focused on <strong>VLSI</strong> and <strong>intelligent hardware systems</strong>.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
         </article>
+        <div class="bachelors-side-stack">
+            <article class="grade-panel grade-section-card" id="core-focus" data-section="core-focus">
+                <div class="grade-panel-header">
+                    <p class="project-kicker">Engineering Focus</p>
+                    <h2>Core Focus Areas</h2>
+                </div>
+                <ul class="grade-list">
+                    <li>Electronics and circuit fundamentals</li>
+                    <li>VLSI and chip design interest</li>
+                    <li>Embedded systems and hardware logic</li>
+                    <li>AI and intelligent systems</li>
+                    <li>Digital design and system integration</li>
+                </ul>
+            </article>
+
+            <article class="grade-panel grade-section-card" id="tools-platforms" data-section="tools-platforms">
+                <div class="grade-panel-header">
+                    <p class="project-kicker">Academic Record</p>
+                    <h2>Consolidated Grades</h2>
+                </div>
+                <a class="education-card-link" href="bachelors-grades.html">View Consolidated Grades</a>
+            </article>
+            <article class="grade-panel grade-section-card" id="project-work" data-section="project-work">
+                <div class="grade-panel-header">
+                    <p class="project-kicker">Applied Learning</p>
+                    <h2>Projects and Practical Work</h2>
+                </div>
+                <p class="grade-note">
+                    Mini projects + lab work + simulations + circuit design.
+                </p>
+                <a class="education-card-link" href="projects.html">View Journey</a>
+            </article>
+        </div>
     </section>
 
     <section class="grade-grid grade-grid-secondary">
-        <article class="grade-panel" id="core-focus">
-            <div class="grade-panel-header">
-                <p class="project-kicker">Engineering Focus</p>
-                <h2>Core Focus Areas</h2>
-            </div>
-            <ul class="grade-list">
-                <li>Electronics and circuit fundamentals</li>
-                <li>VLSI and chip design interest</li>
-                <li>Embedded systems and hardware logic</li>
-                <li>AI and intelligent systems</li>
-                <li>Digital design and system integration</li>
-            </ul>
-        </article>
-
-        <article class="grade-panel" id="tools-platforms">
-            <div class="grade-panel-header">
-                <p class="project-kicker">Tools and Platforms</p>
-                <h2>What I Use</h2>
-            </div>
-            <div class="gallery-placeholder-grid">
-                <div class="gallery-placeholder-card">Python</div>
-                <div class="gallery-placeholder-card">MATLAB</div>
-                <div class="gallery-placeholder-card">LTspice</div>
-                <div class="gallery-placeholder-card">Wokwi</div>
-                <div class="gallery-placeholder-card">Arduino</div>
-                <div class="gallery-placeholder-card">Simulation Tools</div>
-            </div>
-        </article>
-    </section>
-
-    <section class="grade-grid grade-grid-secondary">
-        <article class="grade-panel" id="core-subjects">
-            <div class="grade-panel-header">
-                <p class="project-kicker">Academic Strength</p>
-                <h2>Core Subjects</h2>
-            </div>
-            <div class="grade-stat-grid">
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Digital Electronics</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Signals / Systems</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-                <div class="grade-stat">
-                    <span class="grade-stat-label">VLSI / Logic Design</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Embedded / Microcontrollers</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-            </div>
-        </article>
-
-        <article class="grade-panel" id="core-practicals">
-            <div class="grade-panel-header">
-                <p class="project-kicker">Applied Learning</p>
-                <h2>Core Practicals</h2>
-            </div>
-            <div class="grade-stat-grid">
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Circuit Lab</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Simulation / Design Lab</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Embedded Lab</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-                <div class="grade-stat">
-                    <span class="grade-stat-label">Mini Project / Practical</span>
-                    <strong>Grade To Be Added</strong>
-                </div>
-            </div>
-        </article>
-    </section>
-
-    <section class="grade-grid grade-grid-secondary">
-        <article class="grade-panel" id="project-work">
-            <div class="grade-panel-header">
-                <p class="project-kicker">Applied Learning</p>
-                <h2>Projects and Practical Work</h2>
-            </div>
-            <p class="grade-note">
-                This section is ideal for mini projects, lab work, simulations, circuit design assignments, and AI plus hardware exploration completed during your undergraduate journey.
-            </p>
-            <a class="education-card-link" href="projects.html">View Journey</a>
-        </article>
-
-        <article class="grade-panel" id="industrial-visits">
+        <article class="grade-panel grade-section-card" id="industrial-visits" data-section="industrial-visits">
             <div class="grade-panel-header">
                 <p class="project-kicker">Exposure Beyond Classrooms</p>
                 <h2>Industrial Visits and Group Activities</h2>
             </div>
             <p class="grade-note">
-                Use this space for industrial visits, department events, technical workshops, symposium participation, hackathon teams, or collaborative academic activities that shaped your undergraduate experience.
+                CSIR Chennai, Derma industry, Ooty.
             </p>
         </article>
-    </section>
 
-    <section class="grade-grid grade-grid-secondary">
-        <article class="grade-panel" id="internships">
+        <article class="grade-panel grade-section-card" id="internships" data-section="internships">
             <div class="grade-panel-header">
                 <p class="project-kicker">Industry Experience</p>
                 <h2>Internship During Bachelors</h2>
             </div>
             <p class="grade-note">
-                Add internship role, company name, duration, core responsibilities, and what you learned from working in a practical engineering environment.
+                Explore the internship timeline, roles, and learning journey completed during the undergraduate years.
             </p>
+            <a class="education-card-link" href="internships.html">View Internship Journey</a>
         </article>
 
-        <article class="grade-panel" id="milestones">
+    <section class="grade-grid grade-grid-full">
+        <article class="grade-panel grade-section-card" id="milestones" data-section="milestones">
             <div class="grade-panel-header">
-                <p class="project-kicker">Milestones</p>
-                <h2>Achievements / Highlights</h2>
+                <p class="project-kicker">Winning Stages</p>
+                <h2>Symposiums and Hackathons</h2>
             </div>
-            <p class="grade-note">
-                Add CGPA highlights, technical presentations, club roles, event participation, papers, poster sessions, or hackathon milestones here when ready.
-            </p>
+            <ul class="grade-list">
+                <li>Use this section to spotlight wins, finalist positions, and standout performances from inter-college symposiums.</li>
+                <li>It can also hold hackathon recognitions, special mentions, and problem-solving events that show competitive engineering ability.</li>
+                <li>Once your exact records are ready, we can turn this into a sharper achievement wall with college name, event title, and result.</li>
+            </ul>
         </article>
     </section>
 
-    <section class="grade-grid">
-        <article class="grade-panel" id="future-direction">
+    <section class="grade-grid grade-grid-full">
+        <article class="grade-panel grade-section-card" id="bachelors-gallery" data-section="bachelors-gallery">
+            <div class="grade-panel-header">
+                <p class="project-kicker">Gallery</p>
+                <h2>Campus, Labs, and Team Moments</h2>
+            </div>
+            <div class="gallery-placeholder-grid gallery-real-grid">
+                <figure class="grade-gallery-item">
+                    <img src="college-campus.jpg" alt="Anand Institute of Higher Technology campus">
+                    <figcaption>AIHT Campus View</figcaption>
+                </figure>
+                <figure class="grade-gallery-item">
+                    <img src="college-logo.png" alt="Anand Institute of Higher Technology logo" class="logo-fit">
+                    <figcaption>AIHT College Logo</figcaption>
+                </figure>
+                <div class="gallery-placeholder-card">Lab Session or Event Photo</div>
+            </div>
+            <a class="education-card-link" href="https://aiht.ac.in/" target="_blank" rel="noreferrer">Visit College</a>
+        </article>
+    </section>
+
+    <section class="grade-grid grade-grid-full">
+        <article class="grade-panel grade-section-card" id="future-direction" data-section="future-direction">
             <div class="grade-panel-header">
                 <p class="project-kicker">Looking Ahead</p>
                 <h2>How It Connects to My Future</h2>
@@ -232,6 +286,8 @@
 
 <script>
 const bachelorsCanvas = document.getElementById("bachelors-particle-canvas");
+const bachelorsTrackLinks = Array.from(document.querySelectorAll(".bachelors-lines-shell .education-track-step"));
+const bachelorsSections = Array.from(document.querySelectorAll(".grade-section-card"));
 
 if (bachelorsCanvas) {
   const context = bachelorsCanvas.getContext("2d");
@@ -280,6 +336,39 @@ if (bachelorsCanvas) {
   drawBachelorsParticles();
   window.addEventListener("resize", resizeBachelorsCanvas);
 }
+
+function setActiveBachelorsTrack(target) {
+  bachelorsTrackLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.dataset.target === target);
+  });
+}
+
+bachelorsTrackLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = link.dataset.target;
+    const section = document.getElementById(targetId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "center" });
+      setActiveBachelorsTrack(targetId);
+    }
+  });
+});
+
+const bachelorsObserver = new IntersectionObserver((entries) => {
+  const visibleEntry = entries
+    .filter((entry) => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+  if (visibleEntry) {
+    setActiveBachelorsTrack(visibleEntry.target.dataset.section);
+  }
+}, {
+  threshold: [0.35, 0.55, 0.75]
+});
+
+bachelorsSections.forEach((section) => bachelorsObserver.observe(section));
 </script>
 </body>
 </html>
